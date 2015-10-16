@@ -86,21 +86,6 @@ void setup() {
 
 void draw() {
   clear();
-  //player relatively transparent(invunerable) if within 4 seconds of start
-  if(t<4000){
-    w.op(70);
-  }
-  // Once time of invunerability is over, if player collides with an asteroid output
-  // of text "gameover" and sets player to opaque.
-  if(t>4000){
-    for(Asteroid a: asteroids){
-      if(colPlay(a,w)==true){
-        text("Game Over.",width/2,height/2);
-        noLoop();
-      }
-    }
-    w.op(255);
-  }
   // Render all the Asteroids
   for(Asteroid a : asteroids) {
     a.render();
@@ -124,13 +109,13 @@ void draw() {
       if(keyCode==UP){
         w.move();
       }
-      if(keyCode==LEFT){
+      else if(keyCode==LEFT){
         w.setRotate(-.1);
       }
-      if(keyCode==RIGHT){
+      else if(keyCode==RIGHT){
         w.setRotate(.1);
       }
-      if(keyCode==DOWN){
+      else if(keyCode==DOWN){
        k = new Breaker(w.loc());
        breakers.add(k);
        k.setRotate(w.angle());
@@ -143,4 +128,19 @@ void draw() {
   }
   w.render();
   handleCollisions();
+  //player relatively transparent(invunerable) if within 4 seconds of start
+  if(t<4000){
+    w.op(70);
+  }
+  // Once time of invunerability is over, if player collides with an asteroid output
+  // of text "gameover" and sets player to opaque.
+  if(t>4000){
+    for(Asteroid a: asteroids){
+      if(colPlay(a,w)==true){
+        text("Game Over.",width/2,height/2);
+        noLoop();
+      }
+    }
+    w.op(255);
+  }
 }
