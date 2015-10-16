@@ -103,7 +103,7 @@ void draw() {
   for(Asteroid a : asteroids) {
     a.update(dt);
   }
-  // Direction and firing for the player and breakers, as well as a broken reset.
+  // Direction for the player(which directly updates the breaker), shoots breakers, as well as a broken reset.
   if (keyPressed) {
     if (key == CODED) {
       if(keyCode==UP){
