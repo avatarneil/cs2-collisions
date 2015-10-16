@@ -90,7 +90,8 @@ void draw() {
   if(t<4000){
     w.op(70);
   }
-  // Once time of invunerability is over, if player collides with an asteroid output of text "gameover" and sets player to opaque.
+  // Once time of invunerability is over, if player collides with an asteroid output
+  // of text "gameover" and sets player to opaque.
   if(t>4000){
     for(Asteroid a: asteroids){
       if(colPlay(a,w)==true){

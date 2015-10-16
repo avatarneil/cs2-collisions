@@ -1,7 +1,7 @@
 class Breaker {
-  PVector center;
-  PVector v;
-  float rotDegree;
+  PVector center; // Center location for the Breaker.
+  PVector v; // Velocity of the Breaker.
+  float rotDegree; // Degree by which to rotate.
   
   Breaker(PVector c) {
     center = c;

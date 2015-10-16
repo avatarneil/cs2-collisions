@@ -1,8 +1,8 @@
 class Player {
-  float rotDegree;
-  PVector center;
-  PVector v;
-  int op;
+  float rotDegree; // Degree by which to rotate.
+  PVector center; // Center location of Player.
+  PVector v; // Velocity of Player.
+  int op; // Variable to determine opacity of player.
   Player(){
     center = new PVector(width/2,height/2);
     v = new PVector(0,0);
